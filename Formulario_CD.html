@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* MENU */
+
+    #menu{
+        list-style: nome;
+        padding: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+
+    }
+
+    #menu li{
+        display: inline;
+    }
+
+    #menu li a{
+        color: white;
+        padding: 20px;
+        display: inline-block;
+        text-decoration: nome;
+        transition: background .6s; /*degrader ao passar o mause no menu*/
+
+    }
+
+    #menu li a:hover{
+        background-color:rgb(153, 203, 242);
+
+    }
+
+    /*__________________________________________________________*/
+
+
+        body{
+            font-family: 'Courier New', Courier, monospace, Helvetica, sans-serif;
+            background-color: rgb(153, 203, 242);
+
+        }
+
+        #area{
+            color: white;
+            /*determina como os elementos são posicionados, cada elemento ocupa seu espaço */
+            position: absolute;
+            /*Centralizar*/
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* transparência */
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .inputArea{
+            position: relative;
+        }
+
+        .inputUsuario{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 100%;
+            width: 100%;
+
+        }
+        fieldset{ /*bordas*/
+            border: 8px solid white
+        }
+        legend{
+            border: 1px solid;
+            padding: 5px;
+            text-align: center;
+            background-color: rgb(85, 192, 239);
+            border-radius: 8px;
+        }
+        #submit{
+            background-color: white;
+            width: 100%;
+            border: none;
+            padding: 8px;
+            color: rgb(85, 192, 239);
+            font-size: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+
+        }
+
+
+        .destaque{
+            border: solid 10px greenyellow;
+            color: white;
+            font-weight: bold;
+            
+        }
+
+
+        }
+        
+        form{
+            animation-name: escala;
+            animation-duration: 700ms;
+        }
+
+        @keyframes andar{
+            from{
+                transform: translatey(0);
+            }to{
+                transform: translate(200vh);
+            }
+        }
+            
+        
+
+        @keyframes escala{
+            from{
+                transform: scale(0.9); /*from de to para    / vai da escala menor para a maior*/
+              
+            }
+            to{
+                transform: scale(1);
+            }
+        }
+    </style> 
+    
+    
+
+</head>
+<body>
+    <nav id= "menu"> <!--para criar menu-->
+        <ul> <!--representa iteins desordenados-->
+            <li><a hhef=""> INÍCIO</a></li><!-- para fazer referencia a iteins que ficaram dentro desta lista de elementos desordenados / atributo href faz referencia a algum link ou hiperlink (se clicar direciona para algum link)-->
+            <li><a hhef=""> SOBRE</a></li>
+            <li><a hhef=""> QUEM SOMOS</a></li>
+            <li><a hhef=""> CONTATO</a></li>
+
+        </ul>
+    </nav>
+    <!--"div" divisão, seção, conteiner dentro do documento-->
+    <div id="area">
+        <!--Formulário-->
+        <form action="" onsubmit="cadastrar()">
+            <!--serve para agrupar elementos -->
+            <fieldset>
+                <legend><b>Campinho Digital</b></legend>
+                <!--br quebra linha, da espaço-->
+                <br><br>
+
+                <div class="inputtArea">
+                    <!--input serve para permitir que o usuário envie algo, coloque informação-->
+                    <input type="text" id= "nome" placeholder="nome completo" class="inputUsuario" riquered>
+                
+                <br>
+                <div class="inputArea">
+                    <input type="tel" id= "telefone" placeholder="telefone" class="inputUsuario" riquered>
+                    <br><br>
+                
+                </div>
+                <br>
+                <div>
+                    <p>Sexo: </p>
+                    <input type="radio" id= "Feminino" riquered>
+                    <label for="Feminino">Feminino</label>
+                    <input type= "radio" id="masculino">
+                    <label for="Masculino">Masculino</label>
+                    <input type="radio" id="outros">
+                    <label for="Outros">Outros</label>
+                 </div>
+              <br><br>
+              <div class="inputArea">
+                <input type="text" id="cidade" placeholder="Cidade" class="inputUsuario">
+              </div>
+              <br><br>
+              <div class="inputArea">
+                  <input type="text" id="esstado" placeholder="Estado" class="inputUsuario">
+              </div>
+              <br><br>
+             
+              <input type="submit" id="submit" value="ENVIAR">
+            </fieldset>
+        </form>
+    </div>
+
+    
+</body>
+
+<script>
+    function cadastrar(){
+        let nome = document.querySelector("#nome").value
+        let telefone = document.querySelector("#telefone").value
+        let cidade = document.querySelector("#cidade").value
+        let estado = document.querySelector("#estado").value
+
+        alert(`O número do celular do ${nome} é ${telefone} 
+        Ele mora no estado do ${estado} e na cidade`)
+
+    
+    }
+
+
+</script>
+</html>
