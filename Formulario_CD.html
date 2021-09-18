@@ -78,7 +78,7 @@
 
         }
         fieldset{ /*bordas*/
-            border: 8px solid white
+            border: 1px solid white
         }
         legend{
             border: 1px solid;
@@ -91,11 +91,11 @@
             background-color: white;
             width: 100%;
             border: none;
-            padding: 8px;
+            padding: 3px;
             color: rgb(85, 192, 239);
             font-size: 10px;
             cursor: pointer;
-            border-radius: 10px;
+            border-radius: 1px;
 
         }
 
@@ -107,8 +107,6 @@
             
         }
 
-
-        }
         
         form{
             animation-name: escala;
@@ -141,7 +139,7 @@
 </head>
 <body>
     <nav id= "menu"> <!--para criar menu-->
-        <ul> <!--representa iteins desordenados-->
+        <ul> <!--representa itens desordenados-->
             <li><a hhef=""> INÍCIO</a></li><!-- para fazer referencia a iteins que ficaram dentro desta lista de elementos desordenados / atributo href faz referencia a algum link ou hiperlink (se clicar direciona para algum link)-->
             <li><a hhef=""> SOBRE</a></li>
             <li><a hhef=""> QUEM SOMOS</a></li>
@@ -200,12 +198,18 @@
 <script>
     function cadastrar(){
         let nome = document.querySelector("#nome").value
-        let telefone = document.querySelector("#telefone").value
+        let tel = document.querySelector("#telefone").value
         let cidade = document.querySelector("#cidade").value
         let estado = document.querySelector("#estado").value
 
-        alert(`O número do celular do ${nome} é ${telefone} 
-        Ele mora no estado do ${estado} e na cidade`)
+        
+        if(estado == "Rio de Janeiro"){
+
+          alert(`O número do celular do ${nome} é ${tel} 
+          Ele mora no estado do ${estado} e na cidade ${cidade}.`)
+        }else {
+            alert("O usuário não é do Rio de Janeiro!")
+        }
 
     
     }
